@@ -1,0 +1,169 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #e5e5e5;
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+.inicio-bg {
+  min-height: 100vh;
+  width: 100vw; /* Cambia max-width por width */
+  background: #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow-x: hidden; /* Asegura que nada sobresalga */
+}
+
+.sidebar {
+  width: 100px;
+  height: 100vh;
+  background: #f5ebe3;
+  border-right: 2px solid #a89c94;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.buscar-sidebar-divider {
+  width: 60%;
+  height: 2px;
+  background: #a89c94;
+  margin: 18px 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.sidebar-icon {
+  font-size: 2rem;
+  color: #4B2E1B;
+  align-items: center;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* Main content */
+.inicio-main {
+  flex: 1;
+  min-width: 0; /* Evita que el contenido haga overflow */
+  padding: 32px 32px 70px 48px;
+  position: relative;
+  display: block;
+  color: black;
+  background: #ececec;
+  box-sizing: border-box;
+}
+
+.inicio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-right: 48px; /* Añade espacio a la derecha */
+}
+
+.inicio-title {
+  color: #4B2E1B;
+  font-size: 4.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin: 0 0 24px 0;
+}
+
+/* Logo más a la derecha */
+.inicio-logo {
+  width: 150px;
+  margin: 0 0 16px 44px; /* Aumenta el margen izquierdo */
+  height: 150px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  object-fit: contain;
+  flex-direction: column;
+}
+
+.inicio-content {
+  color: black;
+  text-align: left;
+  font-size: 2.60rem;
+  line-height: 1.3;
+  gap: 16px;  
+  margin-bottom: 40px; /* Añade separación abajo */
+}
+
+.inicio-destacado {
+  color: #4B2E1B;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin: 18px 0 40px 0; /* Más espacio abajo */
+  gap: 16px;
+}
+
+/* Imagen del café más a la derecha */
+.inicio-foto {
+  float: right;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px 2px;
+  border: 6px solid #FEF4EB;
+  width: 220px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(7deg);
+  margin-right: 30px;
+  margin-top: 0; /* Alinea la imagen con el texto */
+
+  align-items: flex-end;
+}
+
+.inicio-foto img {
+  width: 200px;         /* Más grande */
+  height: 300px;        /* Más grande */
+  object-fit: cover;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.inicio-final {
+  margin-top: 32px;
+  margin-bottom: 40px; /* Más espacio abajo si hay más contenido después */
+  font-size: 2.50rem;
+  font-weight: bold;
+}
+
+/* Footer */
+.login-footer {
+  background: #5b3622; /* Un poco más oscuro como en la imagen */
+  color: #fff;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  z-index: 100;
+  box-shadow: 0 -2px 8px #0002; /* Sombra superior suave */
+}
+
+.sidebar-divider {
+  width: 60%;
+  height: 2px;
+  background: #a89c94;
+  margin: 18px 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.sidebar-icon {
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

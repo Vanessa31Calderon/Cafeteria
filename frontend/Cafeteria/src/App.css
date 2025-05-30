@@ -1,0 +1,206 @@
+#root {
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body, #root {
+  margin: 0;
+  padding: 0;
+  background: #e5e5e5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Centra todo el contenido principal en la pantalla */
+.login-bg {
+  min-height: 100vh;
+  background: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #222;
+  position: relative;
+}
+
+/* Centra la tarjeta y la separa del footer */
+.center-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 80vh;
+  position: relative;
+}
+
+/* Tarjeta de login */
+.login-container {
+  background: #f5f5f5;
+  border-radius: 24px;
+  border: 1px solid #a89c94;
+  width: 700px; /* Más ancho */
+  padding: 48px 48px 36px 48px; /* Más padding */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+/* Logo en círculo arriba a la derecha */
+.logo-circle {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  z-index: 3;
+}
+
+/* Footer fijo abajo */
+.login-footer {
+  background: #4B2E1B;
+  color: #fff;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+  border: none;
+}
+
+.login-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.icon-user {
+  border: 1px solid #a89c94;
+  border-radius: 20px;
+  padding: 18px;
+  margin-right: 32px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+}
+
+.icon-user img {
+  width: 60px;
+  height: 60px;
+}
+
+.login-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand {
+  display: block;
+  background: #4B2E1B;
+  font-size: 2rem;
+  letter-spacing: 0.3em;
+  padding: 40px 20 10px 0;
+  font-family:'Franklin Gothic Medium', Arial;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.login-subtitle {
+  margin-top: 10px;
+  font-family: italic;
+  color: #222;
+  font-size: 1.5rem;
+  text-align: center;      /* <-- Esto centra el texto */
+  font-weight: bold;
+  width: 100%;             /* <-- Asegura que ocupe todo el ancho disponible */
+  display: block;          /* <-- Permite que el centrado funcione correctamente */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.login-input {
+  padding: 16px 24px;
+  border-radius: 22px;
+  border: none;
+  background: #d9d9d9;
+  font-size: 1.2rem;
+  color: #555;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+.login-btn {
+  margin-top: 18px;
+  background: #4B2E1B;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 18px 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.login-btn:hover {
+  background: #3a2213;
+}

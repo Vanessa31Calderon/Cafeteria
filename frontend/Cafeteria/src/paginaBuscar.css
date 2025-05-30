@@ -1,0 +1,302 @@
+/* paginaBuscar.css */
+
+/* Contenedor principal de la página de búsqueda */
+.buscar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fondo principal, sidebar y main alineados */
+.buscar-bg {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #e5e5e5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.buscar-sidebar {
+  width: 100px;
+  height: 100vh;
+  background: #f5ebe3;
+  border-right: 2px solid #a89c94;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Iconos del sidebar */
+.buscar-sidebar-icon {
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Línea divisora entre iconos del sidebar */
+.buscar-sidebar-divider {
+  width: 60%;
+  height: 2px;
+  background: #a89c94;
+  margin: 18px 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* Main content ocupa todo el alto y ancho disponible */
+.buscar-main {
+  flex: 1;
+  padding: 32px 40px 32px 40px;
+  background: #e5e5e5;
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado alineado */
+.buscar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+/* Título principal */
+.buscar-title {
+  font-size: 4.5rem;
+  color: #4B2E1B;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin: 0 0 18px 0;
+}
+
+/* Logo del café */
+.buscar-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* Barra de búsqueda (input + botón) */
+.buscar-barra-busqueda {
+  display: flex;
+  align-items: center;
+  margin: 0 0 24px 0;
+  width: 100%;         
+  max-width: none; 
+  box-sizing: border-box;
+  margin-top: 35px;
+}
+
+/* Input de la barra de búsqueda */
+.buscar-barra-busqueda .buscar-input {
+  width: 100%;       
+  background: #4B2E1B;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  padding: 11px 18px;
+  margin-right: 0;
+}
+
+/* Botón de buscar */
+.buscar-btn-buscar {
+  background: #4B2E1B;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  padding: 10px 18px;
+  cursor: pointer;
+  margin-left: -4px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+/* Icono dentro del botón de buscar */
+.buscar-btn-buscar img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+/* Input general del formulario */
+.buscar-input {
+  font-size: 1.5rem;
+  padding: 10px 18px;
+  border-radius: 40px;
+  border: none;
+  background: #BCBAB8;
+  color: #6d4b36;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+
+/* Botón editar: fondo verde claro */
+.buscar-btn-editar {
+  background: #e6ffe6;
+}
+
+/* Botón eliminar: fondo rojo claro */
+.buscar-btn-eliminar {
+  background: #fff0f0;
+}
+
+/* Iconos dentro de los botones de acción */
+.buscar-btn-editar img, .buscar-btn-eliminar img {
+  width: 70px;
+  height: 70px;
+}
+
+/* Sombra al pasar el mouse sobre los botones de acción */
+.buscar-btn-editar:hover, .buscar-btn-eliminar:hover {
+  box-shadow: 0 0 0 2px #4B2E1B33;
+}
+
+/* Pie de página */
+.buscar-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: #4B2E1B;
+  color: #fff;
+  text-align: right;
+  padding: 14px 0 10px 0;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Etiquetas de los campos del formulario */
+.buscar-label {
+  font-size: 2.1rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-align: left;
+  color: #4b2317; /* Color café oscuro, igual que el título */
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+/* Formulario de detalle de reservación */
+.buscar-form-reserva {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: stretch;
+}
+
+
+.buscar-form-group {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-right: 30px;
+}
+
+.buscar-form-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.buscar-acciones-reserva {
+  display: flex;
+  justify-content: center;   /* Centra los botones */
+  align-items: center;
+  gap: 80px;                 /* Espacio entre botones, ajústalo a tu gusto */
+  margin-top: 24px;
+  width: 100%;
+}
+
+.buscar-btn-guardar-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.buscar-btn-guardar {
+  width: 60%;
+  min-width: 320px;
+  background: #4B2E1B;
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 28px;
+  padding: 16px 0;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin: 0 auto;
+  display: block;
+  box-shadow: none;
+}
+
+.buscar-btn-guardar:hover {
+  background: #3a2214;
+  box-shadow: 0 2px 8px #4b2e1b33;
+}
+
+/* Estilos para los botones de acción */
+.boton-accion {
+  background: #4e2e13; /* Café oscuro, igual que tu barra */
+  color: #fff;
+  font-size: 2.3rem;
+  font-weight: bold;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 40px;
+  margin: 0 18px 0 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 80px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.boton-accion:last-child {
+  margin-right: 0;
+}
+
+.boton-accion:hover {
+  background: #7a4a1b;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.boton-accion img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Quitar flechas de los inputs type="number" */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
