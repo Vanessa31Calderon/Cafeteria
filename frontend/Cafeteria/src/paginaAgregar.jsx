@@ -1,3 +1,13 @@
+/**
+ * Página para agregar (crear) nuevas reservaciones.
+ * 
+ * - Permite a los empleados registrar una nueva reservación llenando un formulario.
+ * - Envía los datos al backend para almacenarlos.
+ * - Muestra alertas de éxito o error según la respuesta del servidor.
+ * - Incluye navegación lateral para moverse entre secciones.
+ * - Utiliza estilos personalizados y varios iconos.
+ */
+
 import './paginaAgregar.css';
 import logoCafe from './assets/logodeCafe.png';
 import iconInicio from './assets/inicio.png';
@@ -17,11 +27,16 @@ export default function PaginaAgregar() {
     informacionContacto: '',
   });
 
+  /** Maneja los cambios en los campos del formulario */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  /**
+   * Envía el formulario para crear una nueva reservación.
+   * Muestra alertas según el resultado.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -54,6 +69,7 @@ export default function PaginaAgregar() {
 
   return (
     <div className="agregar-bg">
+      {/* Menú lateral de navegación */}
       <aside className="agregar-sidebar">
         <div style={{ marginTop: "250px" }}></div>
         <div
@@ -76,6 +92,7 @@ export default function PaginaAgregar() {
           <img src={iconBuscar} alt="Buscar" style={{ width: 40, height: 40 }} />
         </div>
       </aside>
+      {/* Formulario principal para agregar reservación */}
       <main className="agregar-main">
         <div className="agregar-header">
           <h1 className="agregar-title">Nueva Reservación</h1>
@@ -137,6 +154,7 @@ export default function PaginaAgregar() {
           <button className="agregar-btn-reserva" type="submit">Agendar</button>
         </form>
       </main>
+      {/* Pie de página */}
       <footer className="login-footer">
         Copyright © 2025 El Tintineo. Todos los derechos reservados.
       </footer>

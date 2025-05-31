@@ -1,3 +1,12 @@
+/**
+ * Página principal después de iniciar sesión.
+ * 
+ * - Muestra un menú lateral con iconos para navegar entre las secciones: inicio, agregar y buscar.
+ * - Presenta el logo, una imagen de café y mensajes motivacionales para los empleados.
+ * - Utiliza estilos personalizados para la experiencia visual.
+ * - Permite la navegación usando el hook useNavigate de react-router-dom.
+ */
+
 import './paginaInicio.css';
 import logoCafe from './assets/logodeCafe.png';
 import cafeFoto from './assets/cafeimagen.jpg';
@@ -11,6 +20,7 @@ export default function PaginaInicio() {
 
   return (
     <div className="inicio-bg">
+      {/* Menú lateral con iconos de navegación */}
       <aside className="sidebar">
         <div style={{ marginTop: "250px" }}></div> 
         <div className="sidebar-icon">
@@ -32,6 +42,7 @@ export default function PaginaInicio() {
           <img src={iconBuscar} alt="Buscar" style={{ width: 40, height: 40 }} />
         </div>
       </aside>
+      {/* Contenido principal de la página */}
       <main className="inicio-main">
         <div className="inicio-header">
           <h1 className="inicio-title">Inicio</h1>
@@ -56,6 +67,7 @@ export default function PaginaInicio() {
           </p>
         </div>
       </main>
+      {/* Pie de página */}
       <footer className="login-footer">
         Copyright © 2025 El Tintineo. Todos los derechos reservados.
       </footer>

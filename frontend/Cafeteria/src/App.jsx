@@ -4,12 +4,31 @@ import './App.css'
 import logoCafe from './assets/logodeCafe.png'; 
 import personaLogin from './assets/personaLogin.png';
 
+/**
+ * Componente principal de la aplicación de inicio de sesión.
+ * 
+ * - Permite a los empleados ingresar su número de empleado y contraseña.
+ * - Valida las credenciales con el backend.
+ * - Si son correctas, redirige a la página principal.
+ * - Si son incorrectas, muestra un mensaje de error.
+ * - Incluye estilos e imágenes para una mejor experiencia visual.
+ */
 function App() {
+  // Estado para el número de empleado
   const [empleado, setEmpleado] = useState('');
+  // Estado para la contraseña
   const [password, setPassword] = useState('');
+  // Estado para mostrar mensajes de error
   const [error, setError] = useState('');
+  // Hook para navegación programática
   const navigate = useNavigate();
 
+  /**
+   * Maneja el envío del formulario de inicio de sesión.
+   * Realiza una petición POST al backend con las credenciales.
+   * Si la autenticación es exitosa, navega a la página de inicio.
+   * Si falla, muestra un mensaje de error.
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -36,9 +55,11 @@ function App() {
   }
 
   return (
+    // Contenedor principal con fondo personalizado
     <div className="login-bg">
       <div className="center-content">
         <div className="login-container">
+          {/* Encabezado con ícono de usuario y título */}
           <div className="login-header">
             <div className="icon-user">
               <img
@@ -64,6 +85,7 @@ function App() {
               </div>
             </div>
           </div>
+          {/* Formulario de inicio de sesión */}
           <form className="login-form" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -82,13 +104,16 @@ function App() {
             <button type="submit" className="login-btn">
               Iniciar sesión
             </button>
+            {/* Mensaje de error si las credenciales son incorrectas */}
             {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
           </form>
         </div>
+        {/* Logo de la cafetería */}
         <div className="logo-circle">
           <img src={logoCafe} alt="logo" style={{ width: 150, height: 150, borderRadius: "50%", background: "#d9d9d9", objectFit: "contain" }} />
         </div>
       </div>
+      {/* Pie de página */}
       <footer className="login-footer">
         Copyright © 2025 El Tintineo. Todos los derechos reservados.
       </footer>

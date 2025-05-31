@@ -1,4 +1,9 @@
-/* paginaBuscar.css */
+/**
+*
+- Estilos para la página de búsqueda, edición y eliminación de reservaciones.
+- Define el diseño del contenedor, sidebar, formulario y botones.
+- Personaliza inputs, labels, acciones y pie de página.
+*/
 
 /* Contenedor principal de la página de búsqueda */
 .buscar-container {
@@ -146,8 +151,6 @@
   box-sizing: border-box;
 }
 
-
-
 /* Botón editar: fondo verde claro */
 .buscar-btn-editar {
   background: #e6ffe6;
@@ -191,7 +194,7 @@
   font-size: 2.1rem;
   font-family: 'Segoe UI', Arial, sans-serif;
   text-align: left;
-  color: #4b2317; /* Color café oscuro, igual que el título */
+  color: #4b2317;
   margin-bottom: 4px;
   font-weight: bold;
 }
@@ -203,7 +206,6 @@
   gap: 60px;
   align-items: stretch;
 }
-
 
 .buscar-form-group {
   display: flex;
@@ -221,9 +223,9 @@
 
 .buscar-acciones-reserva {
   display: flex;
-  justify-content: center;   /* Centra los botones */
+  justify-content: center;
   align-items: center;
-  gap: 80px;                 /* Espacio entre botones, ajústalo a tu gusto */
+  gap: 80px;
   margin-top: 24px;
   width: 100%;
 }
@@ -261,7 +263,7 @@
 
 /* Estilos para los botones de acción */
 .boton-accion {
-  background: #4e2e13; /* Café oscuro, igual que tu barra */
+  background: #4e2e13;
   color: #fff;
   font-size: 2.3rem;
   font-weight: bold;
@@ -298,5 +300,5 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield;
 }

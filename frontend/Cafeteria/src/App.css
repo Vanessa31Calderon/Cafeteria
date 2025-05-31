@@ -1,3 +1,12 @@
+/**
+ * Estilos principales para la página de inicio de sesión.
+ * 
+ * - Centra el contenido y la tarjeta de login en la pantalla.
+ * - Define el diseño visual del formulario, botones, imágenes y footer.
+ * - Personaliza la apariencia del logo, encabezado y campos de entrada.
+ * - Incluye estilos responsivos y detalles visuales para una mejor experiencia.
+ */
+
 #root {
   max-width: 100%;
   min-height: 100vh;
@@ -14,6 +23,7 @@ body, #root {
   min-height: 100vh;
 }
 
+/* Animación y estilos del logo */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -42,6 +52,7 @@ body, #root {
   }
 }
 
+/* Tarjeta y contenido principal */
 .card {
   padding: 2em;
 }
@@ -109,6 +120,7 @@ body, #root {
   border: none;
 }
 
+/* Encabezado de login con imagen y título */
 .login-header {
   display: flex;
   align-items: flex-start;
@@ -153,18 +165,18 @@ body, #root {
   margin-bottom: 10px;
 }
 
-
 .login-subtitle {
   margin-top: 10px;
   font-family: italic;
   color: #222;
   font-size: 1.5rem;
-  text-align: center;      /* <-- Esto centra el texto */
+  text-align: center;
   font-weight: bold;
-  width: 100%;             /* <-- Asegura que ocupe todo el ancho disponible */
-  display: block;          /* <-- Permite que el centrado funcione correctamente */
+  width: 100%;
+  display: block;
 }
 
+/* Formulario de login */
 .login-form {
   display: flex;
   flex-direction: column;

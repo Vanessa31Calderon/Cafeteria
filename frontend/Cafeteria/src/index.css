@@ -1,3 +1,12 @@
+/**
+ * Estilos globales para la aplicación.
+ * 
+ * - Define la fuente, colores base y suavizado de texto.
+ * - Estiliza enlaces y botones.
+ * - Ajusta el diseño responsivo y el fondo general.
+ * - Incluye modo claro y oscuro según preferencia del sistema.
+ */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

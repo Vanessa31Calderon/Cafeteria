@@ -1,3 +1,15 @@
+/**
+ * Página de búsqueda, edición y eliminación de reservaciones.
+ * 
+ * - Permite buscar una reservación por folio.
+ * - Muestra los detalles de la reservación encontrada.
+ * - Permite editar los datos de la reservación y guardarlos.
+ * - Permite eliminar la reservación.
+ * - Incluye mensajes de error y confirmación.
+ * - Usa navegación lateral para moverse entre secciones.
+ * - Utiliza estilos personalizados y varios iconos.
+ */
+
 import './paginaBuscar.css';
 import logoCafe from './assets/logodeCafe.png';
 import iconInicio from './assets/inicio.png';
@@ -16,6 +28,11 @@ export default function PaginaBuscar() {
   const [editando, setEditando] = useState(false);
   const [formEdit, setFormEdit] = useState({});
 
+  /**
+   * Busca una reservación por folio.
+   * Si la encuentra, muestra los detalles.
+   * Si no, muestra un mensaje de error.
+   */
   const handleBuscar = async (e) => {
     e.preventDefault();
     setMensaje('');
@@ -41,16 +58,22 @@ export default function PaginaBuscar() {
     }
   };
 
+  /** Activa el modo edición y carga los datos actuales */
   const handleEditar = () => {
     setEditando(true);
     setFormEdit(detalle);
   };
 
+  /** Actualiza el formulario de edición en cada cambio */
   const handleInputEdit = (e) => {
     const { name, value } = e.target;
     setFormEdit({ ...formEdit, [name]: value });
   };
 
+  /**
+   * Guarda los cambios editados en la reservación.
+   * Si es exitoso, actualiza la vista y muestra mensaje.
+   */
   const handleGuardar = async (e) => {
     e.preventDefault();
     try {
@@ -71,6 +94,10 @@ export default function PaginaBuscar() {
     }
   };
 
+  /**
+   * Elimina la reservación actual tras confirmación.
+   * Limpia la vista y muestra mensaje.
+   */
   const handleEliminar = async () => {
     if (!window.confirm('¿Seguro que deseas eliminar esta reservación?')) return;
     try {
@@ -92,6 +119,7 @@ export default function PaginaBuscar() {
   return (
     <div className="buscar-container">
       <div className="buscar-bg">
+        {/* Menú lateral de navegación */}
         <aside className="buscar-sidebar">
           <div style={{ marginTop: "250px" }}></div>
           <div
@@ -114,11 +142,13 @@ export default function PaginaBuscar() {
             <img src={iconBuscar} alt="Buscar" style={{ width: 40, height: 40 }} />
           </div>
         </aside>
+        {/* Contenido principal */}
         <main className="buscar-main">
           <div className="buscar-header">
             <h1 className="buscar-title">Buscar Reservación por ID</h1>
             <img src={logoCafe} alt="El Tintineo" className="buscar-logo" />
           </div>
+          {/* Barra de búsqueda */}
           <form className="buscar-barra-busqueda" onSubmit={handleBuscar}>
             <input
               className="buscar-input"
@@ -131,7 +161,9 @@ export default function PaginaBuscar() {
               <img src={iconBuscar} alt="Buscar" />
             </button>
           </form>
+          {/* Mensaje de error o confirmación */}
           {mensaje && <div style={{ color: 'red', marginTop: 10 }}>{mensaje}</div>}
+          {/* Detalle de la reservación */}
           {detalle && (
             <>
               <form className="buscar-form-reserva" onSubmit={editando ? handleGuardar : e => e.preventDefault()}>
@@ -205,6 +237,7 @@ export default function PaginaBuscar() {
                     readOnly={!editando}
                   />
                 </div>
+                {/* Botones de acción: editar, eliminar, guardar */}
                 <div className="buscar-acciones-reserva" style={{ marginTop: 40, display: 'flex', justifyContent: 'center', gap: '32px' }}>
                   {!editando && (
                     <>
@@ -227,6 +260,7 @@ export default function PaginaBuscar() {
           )}
         </main>
       </div>
+      {/* Pie de página */}
       <footer className="login-footer">
         Copyright © 2025 El Tintineo. Todos los derechos reservados.
       </footer>

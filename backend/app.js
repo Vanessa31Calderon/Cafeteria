@@ -1,16 +1,21 @@
-const express = require('express'); // Primero requiere express
-const cors = require('cors');
-const Login = require('./modelos/login');
-const CRUD = require('./modelos/CRUD');
-const sequelize = require('./conexion');
+// Archivo principal del backend de la Cafetería
+// Programadora: Vanessa Noemí Calderón Beltrán
+// Descripción: Configurar el servidor express, defiir rutas para login y CRUD de reservaciones.
 
-const app = express(); // Luego crea la app
-const puerto = 3000; 
+// Importación de módulos necesarios
+const express = require('express'); // Framework para servidor web
+const cors = require('cors'); // Permite solicitudes de diferentes orígenes
+const Login = require('./modelos/login'); // Modelo del login
+const CRUD = require('./modelos/CRUD'); // Modelo para operaciones CRUD
+const sequelize = require('./conexion'); // Configuración de la base de datos
 
-app.use(cors());
-app.use(express.json());
+const app = express(); // Inicializa la aplicación express
+const puerto = 3000; // Puerto donde corre el servidor
 
-// Ruta de login   
+app.use(cors()); // Habilita CORS
+app.use(express.json()); // Permite recibir JSON en las peticiones
+
+// Ruta de login: verifica credenciales de usuario
 app.post('/api/login', async (req, res) => {
   try {
     const { no_Empleado, contraseña } = req.body;
@@ -26,8 +31,7 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-
-// Ruta para obtener todos los registros de CRUD
+// Ruta para obtener todos los registros de CRUD (reservaciones)
 app.get('/read/CRUD', async (req, res) => {
   try {
     const registros = await CRUD.findAll();
@@ -37,7 +41,8 @@ app.get('/read/CRUD', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener los registros' });
   }
 });
-// Ruta para crear un nuevo registro en CRUD
+
+// Ruta para crear un nuevo registro en CRUD (reservación)
 app.post('/create/CRUD', async (req, res) => {
     try {
         const { nombreCliente, numeroPersonas, numeroMesa, fechaReservacion, horaReservacion, informacionContacto } = req.body;
@@ -48,7 +53,7 @@ app.post('/create/CRUD', async (req, res) => {
             numeroMesa,
             fechaReservacion,
             horaReservacion,
-            informacionContacto // ← Este estaba mal escrito
+            informacionContacto
         });
 
         res.status(201).send(data);
@@ -58,8 +63,7 @@ app.post('/create/CRUD', async (req, res) => {
     }
 });
 
-
-// Ruta para actualizar un registro en CRUD
+// Ruta para actualizar un registro en CRUD por folio
 app.put('/update/CRUD/:folio', async (req, res) => {
   const { folio } = req.params;
   try {
@@ -74,7 +78,8 @@ app.put('/update/CRUD/:folio', async (req, res) => {
     res.status(500).json({ error: 'Error al actualizar el registro' });
   }
 });
-// Ruta para eliminar un registro en CRUD
+
+// Ruta para eliminar un registro en CRUD por folio
 app.delete('/delete/CRUD/:folio', async (req, res) => {
   const { folio } = req.params;
   try {
@@ -90,7 +95,7 @@ app.delete('/delete/CRUD/:folio', async (req, res) => {
   }
 });
 
-// Ruta para buscar por ID (folio)
+// Ruta para buscar un registro por folio
 app.get('/read/CRUD/:folio', async (req, res) => {
   try {
     const { folio } = req.params;
@@ -105,9 +110,7 @@ app.get('/read/CRUD/:folio', async (req, res) => {
   }
 });
 
-
-
-// Inicia el servidor
+// Inicia el servidor y muestra mensaje en consola
 app.listen(puerto, () => {
   console.log(`Servidor backend corriendo en http://localhost:${puerto}`);
 });
